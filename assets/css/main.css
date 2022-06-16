@@ -2631,3 +2631,7 @@ input, select, textarea {
 				}
 
 	}
+
+	.column{
+		flex: 33%;
+	}
