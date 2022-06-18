@@ -210,6 +210,15 @@ input, select, textarea {
 		clear: both;
 	}
 
+	div.customrounded {
+		border-radius: 1em;
+	}
+	div.customrounded p {
+		color: #ffffff;
+		padding: 10px;
+	}
+
+
 /* Container */
 
 	.container {
