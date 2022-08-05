@@ -202,8 +202,8 @@
 			<div>
 	            <div>
 	                <h1>You need a password to continue</h1>
-	                <input data-id="password" type="password" placeholder="password"/>
-	                <button data-id="button" type="button">Continue</button>
+	                <input type="text" id="text" />
+					<input type="button" id="btn" value="Submit" onClick="javascript: window.open('http://www.mywebsite.com/print/' + document.getElementById('text').value);" />
 	            </div>
         	</div>
 
@@ -225,47 +225,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
-	        <script type="text/javascript">
-	            "use strict"
-	            var button = document.querySelectorAll('[data-id="button"]')
-	            var password = document.querySelectorAll('[data-id="password"]')
-
-	            function login(secret) {
-	                var hash = password[0].value
-	                var url = password[0].value + ".html"
-
-	                var request = new XMLHttpRequest()
-	                request.open('GET', url, true)
-
-	                request.onload = function () {
-	                    if (request.status >= 200 && request.status < 400) {
-	                        window.location = url
-	                    } else {
-	                        parent.location.hash = hash
-	                        password[0].setAttribute('placeholder', 'Incorrect password')
-	                        password[0].value = ''
-	                    }
-	                }
-	                request.onerror = function () {
-	                    parent.location.hash = hash
-	                    password[0].setAttribute('placeholder', password[0].value)
-	                    password[0].value = ''
-	                }
-	                request.send()
-	            }
-
-	            button[0].addEventListener("click", function () {
-	                login(password[0].value)
-	            })
-
-	            document.onkeydown = function (e) {
-	                e = e || window.event
-	                if (e.keyCode == 13) {
-	                    login(password[0].value)
-	                }
-	            }
-	        </script>
+			
 
 	</body>
 </html>
